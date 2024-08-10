@@ -12,8 +12,8 @@
         <div style="color:red" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name errors</div>
         <br>
         <label for="user_name">Введите имя:</label>
-        <input th:value="${user.getName()}" th:field="*{name}" id="user_name" >
-        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name errors</div>
+        <input th:value="${user.getUsername()}" th:field="*{getUsername}" id="user_name" >
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{getUsername}">Name errors</div>
         <br>
         <label for="email">Введите почту:</label>
         <input th:value="${user.getEmail()}" th:field="*{email}" id="email" >

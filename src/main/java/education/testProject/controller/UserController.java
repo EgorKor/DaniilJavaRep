@@ -35,14 +35,14 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public String getUserById(@PathVariable("id") Integer id, Model model){
+    public String getUserById(@PathVariable("id") Long id, Model model){
         User user = userDao.findUserById(id).orElseThrow(() ->{ throw new ResourceNotFoundException("User с таким id не найден");});
         model.addAttribute("user", user);
         return "users/UserData";
     }
 
     @GetMapping("/{id}/update")
-    public String getUpdatePage(@PathVariable("id") Integer id, Model model){
+    public String getUpdatePage(@PathVariable("id") Long id, Model model){
         User user = userDao.findUserById(id).orElseThrow(() ->{ throw new ResourceNotFoundException("User с таким id не найден");});
         model.addAttribute("user", user);
         return "users/Update";
@@ -62,8 +62,8 @@ public class UserController {
     @GetMapping("/userData")
     public String dataExample( Model model){
         User user = new User();
-        user.setId(10);
-        user.setName("Egor");
+        user.setId(10L);
+        user.setUsername("Egor");
         model.addAttribute("user",user);
         System.out.println(model.containsAttribute("user"));
         return "users/UserData";

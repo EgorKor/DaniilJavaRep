@@ -7,7 +7,7 @@
 <body>
   <div th:each="user: ${userList}">
         <p th:text="'Id = ' + ${user.getId()}"></p>
-        <p th:text="'Name = ' + ${user.getName()}"></p>
+        <p th:text="'Name = ' + ${user.getUsername()}"></p>
         <p th:text="'Email = ' + ${user.getEmail()}"></p>
         <p th:text="'IsAdmin = ' + ${user.getIsAdmin()}"></p>
         <br>

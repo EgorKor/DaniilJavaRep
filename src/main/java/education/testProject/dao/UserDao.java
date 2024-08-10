@@ -3,6 +3,7 @@ package education.testProject.dao;
 
 import education.testProject.model.User;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +12,7 @@ import java.util.Optional;
 public interface UserDao {
 
     List<User> findAllUsers();
-    Optional<User> findUserById(Integer id);
+    Optional<User> findUserById(Long id);
 
     Optional<User> findUserByEmail(String email);
     User update(User user);
