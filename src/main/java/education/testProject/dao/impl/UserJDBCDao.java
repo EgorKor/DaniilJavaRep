@@ -19,12 +19,12 @@ public class UserJDBCDao implements UserDao {
     private final UserResultSetExtractor userResultSetExtractor;
 
     private String SQL_INSERT = """
-            INSERT INTO testScheme.users (username, password, email)
+            INSERT INTO users (username, password, email)
             VALUES (?,?,?) RETURNING id;
             """;
 
     private String SQL_SELECT_ALL_USERS = """
-            SELECT * FROM "testScheme.users";
+            SELECT * FROM users;
             """;
 
     private String SQL_SELECT_BY_ID = """
