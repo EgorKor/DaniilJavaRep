@@ -1,4 +1,4 @@
-package education.testProject.exception;
+package education.testProject.domain.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class ResourceNotFoundException extends RuntimeException {
-    private String mesage;
+    private String message;
 
 
 }

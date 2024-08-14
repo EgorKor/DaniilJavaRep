@@ -1,6 +1,6 @@
 package education.testProject.dao.impl;
 
-import education.testProject.model.User;
+import education.testProject.domain.model.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Component;
@@ -21,6 +21,7 @@ public class UserResultSetExtractor implements ResultSetExtractor<List<User>> {
             user.setEmail(rs.getString("email"));
             user.setUsername(rs.getString("username"));
             user.setId(rs.getLong("id"));
+            user.setPassword(rs.getString("password"));
             users.add(user);
         }
         return users;

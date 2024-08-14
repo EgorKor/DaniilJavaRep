@@ -1,9 +1,8 @@
 package education.testProject.dao;
 
 
-import education.testProject.model.User;
+import education.testProject.domain.model.User;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +18,6 @@ public interface UserDao {
 
     User create(User user);
 
-    void deleteById(Integer id);
+    void deleteById(Long id);
 
 }

@@ -1,6 +1,6 @@
-package education.testProject.controller;
+package education.testProject.controller.view;
 
-import education.testProject.exception.ResourceNotFoundException;
+import education.testProject.domain.exception.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @org.springframework.web.bind.annotation.ControllerAdvice

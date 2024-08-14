@@ -1,8 +1,8 @@
-package education.testProject.util.validator;
+package education.testProject.domain.util.validator;
 
 
 import education.testProject.dao.UserDao;
-import education.testProject.model.User;
+import education.testProject.domain.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

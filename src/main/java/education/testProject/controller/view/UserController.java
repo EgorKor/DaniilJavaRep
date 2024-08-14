@@ -1,9 +1,9 @@
-package education.testProject.controller;
+package education.testProject.controller.view;
 
 import education.testProject.dao.UserDao;
-import education.testProject.exception.ResourceNotFoundException;
-import education.testProject.model.User;
-import education.testProject.util.validator.UserValidator;
+import education.testProject.domain.exception.ResourceNotFoundException;
+import education.testProject.domain.model.User;
+import education.testProject.domain.util.validator.UserValidator;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

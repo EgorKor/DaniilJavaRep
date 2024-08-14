@@ -1,7 +1,7 @@
 package education.testProject.dao.impl;
 
 import education.testProject.dao.UserDao;
-import education.testProject.model.User;
+import education.testProject.domain.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -36,7 +36,7 @@ public class UserJDBCDao implements UserDao {
             """;
 
     private String SQL_UPDATE = """
-            UPDATE users SET username = ?, email = ? WHERE id = ?;
+            UPDATE users SET username = ? WHERE id = ?;
             """;
 
 
@@ -61,7 +61,7 @@ public class UserJDBCDao implements UserDao {
 
     @Override
     public User update(User user) {
-        jdbcTemplate.update(SQL_UPDATE, user.getUsername(), user.getEmail(), user.getId());
+        jdbcTemplate.update(SQL_UPDATE, user.getUsername(), user.getId());
         return user;
     }
 
@@ -84,7 +84,7 @@ public class UserJDBCDao implements UserDao {
     }
 
     @Override
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         jdbcTemplate.update(SQL_DELETE, id);
     }
 }

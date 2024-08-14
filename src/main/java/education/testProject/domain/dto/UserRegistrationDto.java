@@ -1,19 +1,13 @@
-package education.testProject.model;
+package education.testProject.domain.dto;
 
 import jakarta.validation.constraints.*;
-import lombok.*;
-import org.hibernate.validator.constraints.Range;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Getter //Генерирует геттеры для всех полей класса
-@Setter //Генерирует сеттеры
-@NoArgsConstructor //конструктор без аргументов - по умолчанию
-@AllArgsConstructor //конструктор со всех аргументами
-@ToString //генерируется ToString()
-public class User {
-
-    @NotNull(message = "ID не может быть null")
-    @Range(min = 0, max = Long.MAX_VALUE, message = "ID не может быть меньше 0")
-    private Long id;
+@Data
+public class UserRegistrationDto {
     @NotEmpty(message = "Name не может быть 0 символов")
     @NotBlank(message = "Name не может состоять из одних пробелов")
     @Size(min = 2, max = 12, message = "Размер name должен быть от 2 до 12 символов")
