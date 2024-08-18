@@ -2,7 +2,7 @@ package education.testProject.controller.view;
 
 import education.testProject.dao.UserDao;
 import education.testProject.domain.exception.ResourceNotFoundException;
-import education.testProject.domain.model.User;
+import education.testProject.domain.model.user.User;
 import education.testProject.domain.util.validator.UserValidator;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -72,7 +72,6 @@ public class UserController {
     @GetMapping("/create")
     public String getCreationPage(Model model){
         User user = new User();
-        user.setIsAdmin(false);
         model.addAttribute("user",user);
         return "users/UserCreate";
     }

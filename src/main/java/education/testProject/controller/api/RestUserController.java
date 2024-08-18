@@ -1,8 +1,11 @@
 package education.testProject.controller.api;
 
+import education.testProject.domain.dto.CompanyDto;
+import education.testProject.domain.dto.OrderDto;
+import education.testProject.domain.dto.UserDto;
 import education.testProject.domain.dto.UserRegistrationDto;
 import education.testProject.domain.exception.ValidationException;
-import education.testProject.domain.model.User;
+import education.testProject.domain.model.user.User;
 import education.testProject.domain.util.validator.UserValidator;
 import education.testProject.service.UserService;
 import jakarta.validation.Valid;
@@ -24,15 +27,25 @@ public class RestUserController {
     @GetMapping
     //@ResponseBody - используется для конвертации результата работы метода
     //в JSON файл
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
+    public List<UserDto> getAllUsers(){
+        return userService.getAllUsers().stream().map((o) -> new UserDto(o)).toList();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable("id") Long id){
-        return userService.getById(id);
+    public UserDto getUserById(@PathVariable("id") Long id){
+        return new UserDto(userService.getById(id));
     }
 
+    @GetMapping("/{id}/orders")
+    public List<OrderDto> getOrdersByUser(@PathVariable("id") Long id){
+        return userService.getById(id).getOrders().stream().map((o) -> new OrderDto(o)).toList();
+    }
+
+
+    @GetMapping("/{id}/companies")
+    public List<CompanyDto> getCompaniesByUser(@PathVariable("id") Long id){
+        return userService.getById(id).getCompanies().stream().map((o) -> new CompanyDto(o)).toList();
+    }
     @PostMapping
     public User saveUser(@Valid @RequestBody UserRegistrationDto dto,
                          BindingResult bindingResult){

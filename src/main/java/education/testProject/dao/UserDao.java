@@ -1,7 +1,7 @@
 package education.testProject.dao;
 
 
-import education.testProject.domain.model.User;
+import education.testProject.domain.model.user.User;
 
 import java.util.List;
 import java.util.Optional;

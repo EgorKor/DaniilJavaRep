@@ -1,6 +1,6 @@
 package education.testProject.service;
 
-import education.testProject.domain.model.User;
+import education.testProject.domain.model.user.User;
 
 import java.util.List;
 

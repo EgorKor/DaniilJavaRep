@@ -1,7 +1,7 @@
 package education.testProject.dao.impl;
 
 import education.testProject.dao.UserDao;
-import education.testProject.domain.model.User;
+import education.testProject.domain.model.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,8 +1,8 @@
 package education.testProject.domain.util.validator;
 
 
-import education.testProject.dao.UserDao;
-import education.testProject.domain.model.User;
+import education.testProject.domain.model.user.User;
+import education.testProject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -11,7 +11,7 @@ import org.springframework.validation.Validator;
 @Component
 @RequiredArgsConstructor
 public class UserValidator implements Validator {
-    private final UserDao dao;
+    private final UserRepository dao;
 
 
     @Override
