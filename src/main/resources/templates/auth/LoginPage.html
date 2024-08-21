@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="section">
+    <div class="container">
+        <div class="form-wrap col-lg-4 offset-lg-4 col-md-6 offset-md-3">
+            <div class="heading">Добро пожаловать!</div>
+            <form class="form-login" th:action="@{/process_login}" method="post">
+                <label>Почта:</label>
+                <input class="form-line" type="text" name="username" />
+                <br>
+                <label>Пароль:</label>
+                <input class="form-line" type="password" name="password" />
+                <br>
+                <input class="btn btn-login" type="submit" value="Войти" />
+            </form>
+            <form style="align-self: center;" th:action="@{/auth/registration}">
+                <button class="btn btn-signUp col-lg-4">Зарегистрироваться</button>
+            </form>
+            <a th:href="@{/auth/recovery_request}" class="link-password">Забыли пароль?</a>
+            <div class="error-mes" style="color: red" th:if="${param.error}">
+                Указаны неверная почта или пароль.
+            </div>
+            <div class="error-mes" th:if="${param.logout}">Вы вышли.</div>
+            <div class="error-mes" th:if="${param.success}">
+                Вы успешно зарегистрировались, можете авторизоваться.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

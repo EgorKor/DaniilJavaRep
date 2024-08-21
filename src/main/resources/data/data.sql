@@ -6,7 +6,9 @@ SET search_path = test;
 -- ID не вставляем, т к генерация происходит автоматически
 INSERT INTO users (username, password, email, role) VALUES
                                                   ('egor','12345678','egor@mail.com', 'ROLE_USER'), -- вставка первой записи
-                                                  ('max','12345678','max@mail.com', 'ROLE_USER'); -- вставка второй записи
+                                                  ('max','12345678','max@mail.com', 'ROLE_USER'), -- вставка второй записи
+                                                  ('admin','$2a$10$kl7zWBnziFreIqLnOOO1qefyVYMZTPemJuPj1fCiEhRW3gID8vSY2', 'admin', 'ROLE_ADMIN');
+
 
 INSERT INTO orders (name, price, user_id) VALUES
                                               ('order1',100,1),
